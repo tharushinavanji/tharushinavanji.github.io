@@ -1,197 +1,232 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Tharushi Ekanayake | Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			/* Custom accent colors */
-			:root {
-				--accent: #009688;   /* teal */
-				--accent-dark: #00796b;
-				--bg-light: #f0f4f8;
-			}
-			body {
-				background-color: var(--bg-light);
-			}
-			a, h1, h2, h3, h4, h5 {
-				color: var(--accent);
-			}
-			.button {
-				background-color: var(--accent);
-				color: #fff !important;
-			}
-			.button:hover {
-				background-color: var(--accent-dark);
-			}
-			#header .logo strong {
-				color: var(--accent);
-			}
-			#menu ul li a:hover {
-				color: var(--accent);
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tharushi Ekanayake — Portfolio</title>
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+<!-- Fonts & icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-			<!-- Main -->
-			<div id="main">
-				<div class="inner">
+<style>
+  :root{
+    --bg:#0f1115;
+    --panel:#0f1720;
+    --card:#11141a;
+    --accent:#00bfa5; /* teal accent */
+    --muted:#98a0aa;
+    --glass: rgba(255,255,255,0.03);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef1;background:linear-gradient(180deg,#0b0c0f 0%, #0f1115 60%);}
+  a{color:var(--accent);text-decoration:none}
+  /* layout */
+  .wrap{display:flex;min-height:100vh}
+  /* sidebar */
+  .sidebar{
+    width:280px;background:linear-gradient(180deg,var(--panel),#0b1116);padding:28px 20px;color:#dbe9ea;flex-shrink:0;
+    display:flex;flex-direction:column;gap:18px;border-right:1px solid rgba(255,255,255,0.03);
+  }
+  .brand{font-weight:700;font-size:1.05rem;letter-spacing:0.2px}
+  .profile{
+    width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.06);margin:10px 0;
+  }
+  .side-bio{font-size:0.95rem;color:var(--muted)}
+  .side-contact{margin-top:auto}
+  .menu{list-style:none;padding:0;margin:14px 0 0 0;display:flex;flex-direction:column;gap:8px}
+  .menu a{display:block;padding:10px;border-radius:8px;color:#cfeff0}
+  .menu a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+  .socials{display:flex;gap:10px;margin-top:10px}
+  .socials a{color:#cfeff0;font-size:1.05rem}
+  /* main content */
+  .main{flex:1;padding:36px;overflow:auto}
+  .hero{display:flex;gap:28px;align-items:center;margin-bottom:18px}
+  .hero .hero-text h1{margin:0;font-size:2rem}
+  .hero .hero-text p{margin:6px 0;color:var(--muted)}
+  .btn{display:inline-block;padding:10px 16px;border-radius:999px;background:var(--accent);color:#041014;font-weight:600}
+  /* sections */
+  section.card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); padding:22px;border-radius:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.03)}
+  h2.section-title{margin:0 0 10px 0;color:#e6f7f6}
+  .muted{color:var(--muted)}
+  /* education list */
+  ul.simple{list-style:none;padding-left:0;margin:8px 0}
+  ul.simple li{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+  /* projects grid */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .project{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.6);transition:transform .22s}
+  .project:hover{transform:translateY(-6px)}
+  .project img{width:100%;height:160px;object-fit:cover;display:block}
+  .project .p-body{padding:12px}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:0.85rem;color:var(--muted)}
+  /* footer small */
+  footer.site-foot{margin-top:28px;color:var(--muted);font-size:0.85rem;text-align:center;padding:18px 0}
+  /* responsive */
+  @media(max-width:900px){
+    .wrap{flex-direction:column}
+    .sidebar{width:100%;flex-direction:row;align-items:center;padding:12px 14px;gap:12px}
+    .profile{width:64px;height:64px}
+    .side-bio{display:none}
+    .menu{display:flex;flex-direction:row;gap:6px;overflow:auto}
+    .main{padding:18px}
+  }
+</style>
+</head>
+<body>
 
-					<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo"><strong>Portfolio</strong> - Tharushi Ekanayake</a>
-						<ul class="icons">
-							<li><a href="mailto:tharushinavanji@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							<li><a href="https://github.com/tharushinavanji" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</header>
+<div class="wrap">
 
-					<!-- Banner -->
-					<section id="banner">
-						<div class="content">
-							<header>
-								<h1>Hi, I’m <strong>Tharushi Ekanayake</strong></h1>
-								<p>BSc (Hons) Biotechnology | Healthcare & Digital Health Enthusiast</p>
-							</header>
-							<p>I am an undergraduate in Biotechnology with a strong passion for healthcare innovation and digital health solutions. Skilled in research, data analysis, and cross-discipline collaboration. My lab experiences strengthen my capability to contribute to biotech diagnostics and health tech in Sri Lanka.</p>
-							<ul class="actions">
-								<li><a href="#contact" class="button big">Get in Touch</a></li>
-							</ul>
-						</div>
-						<span class="image object">
-							<img src="images/im.jpeg" alt="Photo of Tharushi Ekanayake" />
-						</span>
-					</section>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Sidebar">
+    <div>
+      <div class="brand">Tharushi Ekanayake</div>
+      <div class="muted" style="font-size:0.85rem">BSc (Hons) Biotechnology</div>
+    </div>
 
-					<!-- About -->
-					<section id="about">
-						<header class="major"><h2>About Me</h2></header>
-						<p>Dedicated biotechnology undergraduate with a focus on healthcare technology and research. I aim to apply my scientific knowledge and leadership skills to innovative healthcare projects that make a real impact.</p>
-					</section>
+    <img src="images/im.jpeg" alt="Photo of Tharushi Ekanayake" class="profile">
 
-					<!-- Education -->
-					<section id="education">
-						<header class="major"><h2>Education</h2></header>
-						<ul>
-							<li><strong>BSc (Hons) in Biotechnology</strong> – Ongoing Undergraduate Program</li>
-							<li><strong>GCE Advanced Level</strong> (2023/2024) – Biology (C), Chemistry (C), Physics (S)</li>
-							<li><strong>GCE Ordinary Level</strong> (2019) – Distinctions/High grades in English, Sinhala, Mathematics, Science</li>
-						</ul>
-					</section>
+    <div class="side-bio muted">Undergraduate with an interest in healthcare innovation, diagnostics and digital health. Research experience and lab skills.</div>
 
-					<!-- Work Experience -->
-					<section id="experience">
-						<header class="major"><h2>Work Experience</h2></header>
-						<div class="features">
-							<article>
-								<span class="icon solid fa-briefcase"></span>
-								<div class="content">
-									<h3>Research Assistant — Medical Laboratory (2023)</h3>
-									<ul>
-										<li>Supported diagnostic assays and research tasks</li>
-										<li>Handled sample preparation, data recording, and equipment maintenance</li>
-									</ul>
-								</div>
-							</article>
-						</div>
-					</section>
+    <nav>
+      <ul class="menu" role="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-					<!-- Other Professional Qualifications -->
-					<section id="qualifications">
-						<header class="major"><h2>Other Professional Qualifications</h2></header>
-						<ul>
-							<li>Online courses in Digital Health and Research Methodologies (2023)</li>
-							<li>Certificate in Leadership & Teamwork Development (2022)</li>
-						</ul>
-					</section>
+    <div class="socials">
+      <a href="mailto:tharushinavanji@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/tharushinavanji" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    </div>
 
-					<!-- Projects -->
-					<section id="projects">
-						<header class="major"><h2>Projects</h2></header>
-						<div class="posts">
-							<article>
-								<a href="#" class="image"><img src="images/project1.jpg" alt="Lab project photo" /></a>
-								<h3>Laboratory Diagnostics Support</h3>
-								<p>Contributed to diagnostic assays, handling samples and data.</p>
-								<p><strong>Technologies:</strong> Lab protocols, sample handling</p>
-							</article>
-							<article>
-								<a href="#" class="image"><img src="images/project2.jpg" alt="Digital health research" /></a>
-								<h3>Digital Health Exploration</h3>
-								<p>Independent study on integrating biosensors in healthcare systems.</p>
-								<p><strong>Technologies:</strong> Research, concept planning</p>
-							</article>
-						</div>
-					</section>
+    <div class="side-contact" style="font-size:0.9rem;color:var(--muted);margin-top:14px">
+      <div><strong>Email</strong><br><a href="mailto:tharushinavanji@gmail.com">tharushinavanji@gmail.com</a></div>
+      <div style="margin-top:8px"><strong>Phone</strong><br>+94 71 054 1470</div>
+    </div>
+  </aside>
 
-					<!-- Skills -->
-					<section id="skills">
-						<header class="major"><h2>Other Skills</h2></header>
-						<p>Research & Data Analysis • Lab Techniques • Git & GitHub • Leadership & Teamwork • Sinhalese & English</p>
-					</section>
+  <!-- MAIN -->
+  <main class="main" id="main">
 
-					<!-- Hobbies -->
-					<section id="hobbies">
-						<header class="major"><h2>Hobbies</h2></header>
-						<p>Dancing • Photography • Photo Editing • Sports</p>
-					</section>
+    <!-- HERO -->
+    <div class="hero card" id="home" style="display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <div class="hero-text">
+        <h1>Hi — I’m <strong>Tharushi</strong></h1>
+        <p class="muted">Biotechnology undergraduate focused on healthcare innovation, diagnostics and digital health.</p>
+        <p><a class="btn" href="#resume">Download CV</a></p>
+      </div>
+      <div style="min-width:140px;text-align:right">
+        <div style="color:var(--muted);font-size:0.9rem">Role</div>
+        <div style="font-weight:700;margin-top:6px">Research Assistant / Student</div>
+      </div>
+    </div>
 
-					<!-- Resume -->
-					<section id="resume">
-						<header class="major"><h2>Resume</h2></header>
-						<a href="resume.pdf" class="button icon solid fa-download" download>Download My CV (PDF)</a>
-					</section>
+    <!-- ABOUT -->
+    <section id="about" class="card">
+      <h2 class="section-title">About Me</h2>
+      <p>I am an undergraduate in Biotechnology with a strong passion for healthcare innovation and digital health solutions. I am skilled in research, data analysis, and cross-disciplinary collaboration, with laboratory experience supporting diagnostic testing and project work.</p>
+    </section>
 
-					<!-- Contact -->
-					<section id="contact">
-						<header class="major"><h2>Contact</h2></header>
-						<ul class="contact">
-							<li class="icon solid fa-envelope"><a href="mailto:tharushinavanji@gmail.com">tharushinavanji@gmail.com</a></li>
-							<li class="icon solid fa-phone">+94 71 054 1470</li>
-						</ul>
-					</section>
+    <!-- EDUCATION -->
+    <section id="education" class="card">
+      <h2 class="section-title">Education</h2>
+      <ul class="simple">
+        <li><strong>BSc (Hons) in Biotechnology</strong> — Ongoing (Undergraduate Program)</li>
+        <li><strong>GCE Advanced Level</strong> (2023/2024) — Biology (C), Chemistry (C), Physics (S)</li>
+        <li><strong>GCE Ordinary Level</strong> (2019) — Distinctions / High grades in English, Sinhala, Mathematics, Science</li>
+      </ul>
+    </section>
 
-				</div>
-			</div>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="card">
+      <h2 class="section-title">Work Experience</h2>
+      <div>
+        <h3>Research Assistant — Medical Laboratory (2023)</h3>
+        <ul>
+          <li>Supported diagnostic assays and research tasks.</li>
+          <li>Prepared samples, recorded data and maintained equipment.</li>
+          <li>Assisted with reporting and quality checks.</li>
+        </ul>
+      </div>
+    </section>
 
-			<!-- Sidebar -->
-			<div id="sidebar">
-				<div class="inner">
-					<!-- Menu -->
-					<nav id="menu">
-						<header class="major"><h2>Menu</h2></header>
-						<ul>
-							<li><a href="#about">About Me</a></li>
-							<li><a href="#education">Education</a></li>
-							<li><a href="#experience">Work Experience</a></li>
-							<li><a href="#qualifications">Qualifications</a></li>
-							<li><a href="#projects">Projects</a></li>
-							<li><a href="#skills">Skills</a></li>
-							<li><a href="#hobbies">Hobbies</a></li>
-							<li><a href="#resume">Resume</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</nav>
+    <!-- PROJECTS -->
+    <section id="projects" class="card">
+      <h2 class="section-title">Projects</h2>
 
-					<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; 2025 Tharushi Ekanayake. All rights reserved.</p>
-					</footer>
-				</div>
-			</div>
+      <div class="projects">
+        <article class="project">
+          <img src="images/project1.jpg" alt="Laboratory project image">
+          <div class="p-body">
+            <h4>Laboratory Diagnostics Support</h4>
+            <p>Contributed to diagnostic assays, handling samples and data for accurate reporting.</p>
+            <div class="badges">
+              <span class="badge">Lab protocols</span>
+              <span class="badge">Data recording</span>
+            </div>
+          </div>
+        </article>
 
-		</div>
+        <article class="project">
+          <img src="images/project2.jpg" alt="Digital health project image">
+          <div class="p-body">
+            <h4>Digital Health Exploration</h4>
+            <p>Independent study on integrating biosensors into healthcare systems and data workflows.</p>
+            <div class="badges">
+              <span class="badge">Research</span>
+              <span class="badge">Concept planning</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+    <!-- SKILLS -->
+    <section id="skills" class="card">
+      <h2 class="section-title">Other Skills</h2>
+      <p>Research & Data Analysis • Laboratory Techniques • Git & GitHub • Leadership & Teamwork • Sinhala & English</p>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="card">
+      <h2 class="section-title">Hobbies</h2>
+      <p>Dancing • Photography • Photo Editing • Sports</p>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="card">
+      <h2 class="section-title">Resume</h2>
+      <p><a href="resume.pdf" class="btn" download>Download my CV (PDF)</a></p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:tharushinavanji@gmail.com">tharushinavanji@gmail.com</a><br>Phone: +94 71 054 1470</p>
+    </section>
+
+    <footer class="site-foot">
+      © 2025 Tharushi Ekanayake — Last updated: 29 Sep 2025
+    </footer>
+
+  </main>
+</div>
+
+<!-- small JS: smooth scroll for anchor links -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+</script>
+</body>
 </html>
