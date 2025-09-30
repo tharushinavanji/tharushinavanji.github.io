@@ -1,87 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tharushi Ekanayake — Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tharushi Ekanayake | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <style>
-    /* Navbar hover effects */
-    .navbar-nav .nav-link {
-      transition: 0.3s;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #00bcd4 !important;
-    }
-    .navbar-nav .nav-link.active {
-      font-weight: bold;
-      border-bottom: 2px solid #00bcd4;
-    }
-
-    /* Section backgrounds */
-    section:nth-of-type(even) {
-      background-color: #f8f9fa;
-    }
-    section:nth-of-type(odd) {
-      background-color: #ffffff;
-    }
-
-    /* Card hover */
-    .card {
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-radius: 12px;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    /* Resume button hover */
-    .btn {
-      transition: 0.3s;
-      border-radius: 25px;
-      padding: 10px 20px;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      background-color: #00796b;
-    }
-
-    /* Hero section */
+    body { font-family: 'Poppins', sans-serif; background: #f5f7fa; color: #333; }
     .hero {
-      background: linear-gradient(135deg, #009688, #00bcd4);
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
       color: white;
       padding: 100px 20px;
       text-align: center;
     }
     .hero img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
+      border: 4px solid #fff;
       margin-bottom: 20px;
     }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; }
 
-    /* Footer */
-    footer a {
-      font-size: 1.5rem;
+    nav.navbar { background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    nav .nav-link {
+      color: #555;
       margin: 0 10px;
+      transition: color 0.3s;
+    }
+    nav .nav-link:hover {
+      color: #4e54c8;
+    }
+    nav .nav-link.active {
+      color: #4e54c8;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #4e54c8;
+    }
+
+    .card.portfolio-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card.portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: #4e54c8;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover {
+      background: #3538a8;
+    }
+
+    footer {
+      background: #2c2f3a;
       color: white;
-      transition: 0.3s;
+      padding: 40px 0;
+      text-align: center;
     }
-    footer a:hover {
-      color: #00bcd4;
+    footer a {
+      color: #aaa;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
     }
+    footer a:hover { color: white; }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
@@ -96,124 +117,116 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <img src="images/im.jpeg" alt="Photo of Tharushi Ekanayake" width="140">
-      <h1 class="fw-bold">Tharushi Ekanayake</h1>
-      <p class="lead">BSc (Hons) Biotechnology Student | Healthcare Innovation & Digital Health</p>
-      <a href="#contact" class="btn btn-light">Get in Touch</a>
+      <img src="images/im.jpeg" alt="Photo of Tharushi Ekanayake">
+      <h1>Tharushi Ekanayake</h1>
+      <p>BSc (Hons) Biotechnology | Healthcare & Digital Health Enthusiast</p>
+      <a href="#contact" class="btn btn-primary mt-4">Get in Touch</a>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container text-center">
-      <h2>About Me</h2>
-      <p class="mt-3">I am an undergraduate in Biotechnology with a strong passion for healthcare innovation and digital health solutions. Skilled in research, data analysis, and cross-disciplinary collaboration, I aim to apply biotechnology to practical healthcare challenges. My laboratory experience has strengthened my ability to contribute to biotech-enabled diagnostics and health tech projects in Sri Lanka.</p>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="py-5">
+  <section id="about">
     <div class="container">
-      <h2 class="text-center mb-4">Education</h2>
-      <div class="card mb-3 p-3">
-        <h5>BSc (Hons) in Biotechnology</h5>
-        <p>Ongoing Undergraduate Program</p>
-      </div>
-      <div class="card mb-3 p-3">
-        <h5>GCE Advanced Level</h5>
-        <p>2023/2024 — Biology (C), Chemistry (C), Physics (S)</p>
-      </div>
-      <div class="card mb-3 p-3">
-        <h5>GCE Ordinary Level</h5>
-        <p>2019 — Distinctions in English, Sinhala, Mathematics, Science, etc.</p>
+      <h2 class="section-title">About Me</h2>
+      <p class="text-center">I am an undergraduate in Biotechnology with a strong passion for healthcare innovation and digital health solutions. Skilled in research, data analysis, and cross-discipline collaboration. My lab experiences strengthen my capability to contribute to biotech diagnostics and health tech in Sri Lanka.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card p-4 mb-4">
+            <h5>BSc (Hons) in Biotechnology</h5>
+            <p>Ongoing Undergraduate Program</p>
+          </div>
+          <div class="card p-4 mb-4">
+            <h5>GCE Advanced Level</h5>
+            <p>2023/2024 — Biology (C), Chemistry (C), Physics (S)</p>
+          </div>
+          <div class="card p-4 mb-4">
+            <h5>GCE Ordinary Level</h5>
+            <p>2019 — Distinctions/High grades in English, Sinhala, Mathematics, Science</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="py-5">
+  <section id="experience">
     <div class="container">
-      <h2 class="text-center mb-4">Work Experience</h2>
-      <div class="card p-3 mb-3">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="card p-4">
         <h5>Research Assistant — Medical Laboratory (2023)</h5>
         <ul>
-          <li>Assisted with laboratory diagnostic assays</li>
-          <li>Conducted sample preparation and data collection</li>
-          <li>Maintained lab safety and documentation</li>
+          <li>Supported diagnostic assays and research tasks</li>
+          <li>Sample prep, data recording, maintaining lab equipment</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-5">
+  <section id="projects">
     <div class="container">
-      <h2 class="text-center mb-4">Projects</h2>
+      <h2 class="section-title">Projects</h2>
       <div class="row">
-        <div class="col-md-6">
-          <div class="card p-3 mb-3">
+        <div class="col-md-6 mb-4">
+          <div class="card portfolio-card p-4">
             <h5>Laboratory Diagnostics Support</h5>
-            <p>Contributed to diagnostic assays with sample preparation and data collection.</p>
-            <p><strong>Technologies:</strong> Laboratory protocols, sample handling</p>
+            <p>Contributed to diagnostic assays, handling samples and data.</p>
+            <p><strong>Technologies:</strong> Lab protocols, sample handling</p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card p-3 mb-3">
+        <div class="col-md-6 mb-4">
+          <div class="card portfolio-card p-4">
             <h5>Digital Health Exploration</h5>
-            <p>Independent study project on integrating biosensors into healthcare systems.</p>
-            <p><strong>Technologies:</strong> Research literature, concept planning</p>
+            <p>Independent study on integrating biosensors in healthcare systems.</p>
+            <p><strong>Technologies:</strong> Research, concept planning</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-5 text-center">
-    <div class="container">
-      <h2>Other Skills</h2>
+  <section id="skills">
+    <div class="container text-center">
+      <h2 class="section-title">Other Skills</h2>
       <span class="badge bg-secondary m-1">Research & Data Analysis</span>
-      <span class="badge bg-secondary m-1">Laboratory Techniques</span>
+      <span class="badge bg-secondary m-1">Lab Techniques</span>
       <span class="badge bg-secondary m-1">Git & GitHub</span>
       <span class="badge bg-secondary m-1">Leadership & Teamwork</span>
-      <span class="badge bg-secondary m-1">Languages: Sinhala, English</span>
+      <span class="badge bg-secondary m-1">Sinhalese & English</span>
     </div>
   </section>
 
-  <!-- Hobbies -->
-  <section id="hobbies" class="py-5 text-center">
-    <div class="container">
-      <h2>Hobbies</h2>
+  <section id="hobbies">
+    <div class="container text-center">
+      <h2 class="section-title">Hobbies</h2>
       <p>Dancing • Photography • Photo Editing • Sports</p>
     </div>
   </section>
 
-  <!-- Resume -->
-  <section id="resume" class="py-5 text-center">
-    <div class="container">
-      <h2>Resume</h2>
-      <a href="resume.pdf" class="btn btn-success mt-3" download>Download My CV (PDF)</a>
+  <section id="resume">
+    <div class="container text-center">
+      <h2 class="section-title">Resume</h2>
+      <a href="resume.pdf" class="btn btn-primary mt-3" download>Download My CV (PDF)</a>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-5 text-center">
-    <div class="container">
-      <h2>Contact</h2>
+  <section id="contact">
+    <div class="container text-center">
+      <h2 class="section-title">Contact</h2>
       <p>Email: <a href="mailto:tharushinavanji@gmail.com">tharushinavanji@gmail.com</a></p>
       <p>Phone: +94 71 054 1470</p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center p-4 bg-dark text-white">
+  <footer>
     <p>© 2025 Tharushi Ekanayake</p>
     <a href="mailto:tharushinavanji@gmail.com"><i class="bi bi-envelope"></i></a>
     <a href="https://github.com/tharushinavanji"><i class="bi bi-github"></i></a>
-    <a href="https://linkedin.com/in/YOUR-LINKEDIN"><i class="bi bi-linkedin"></i></a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
