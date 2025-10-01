@@ -79,6 +79,11 @@
   ul.simple{list-style:none;padding-left:0;margin:8px 0}
   ul.simple li{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
 
+  /* skills split */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .skills-grid ul{margin:0;padding-left:18px}
+  .skills-grid li{margin:6px 0}
+
   /* projects grid */
   .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
   .project{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.6);transition:transform .3s, box-shadow .3s}
@@ -102,6 +107,7 @@
     .side-bio{display:none}
     .menu{display:flex;flex-direction:row;gap:6px;overflow:auto}
     .main{padding:18px}
+    .skills-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -164,16 +170,29 @@
     <section id="about" class="card">
       <h2 class="section-title">About Me</h2>
       <p>I am an undergraduate in Biotechnology with a strong passion for healthcare innovation and digital health solutions. I am skilled in research, data analysis, and cross-disciplinary collaboration, with laboratory experience supporting diagnostic testing and project work.</p>
+      <ul class="simple">
+        <li>3+ Years of Study</li>
+        <li>5+ Research Areas</li>
+        <li>10+ Projects</li>
+        <li>100% Dedication</li>
+      </ul>
     </section>
 
     <!-- EDUCATION -->
     <section id="education" class="card">
-      <h2 class="section-title">Education Journey</h2>
-      <ul class="simple">
-        <li><strong>BSc (Hons) in Biotechnology</strong> — Ongoing (Undergraduate Program)</li>
-        <li><strong>GCE Advanced Level</strong> (2023/2024) — Biology (C), Chemistry (C), Physics (S)</li>
-        <li><strong>GCE Ordinary Level</strong> (2019) — Distinctions / High grades in English, Sinhala, Mathematics, Science</li>
-      </ul>
+      <h2 class="section-title">Educational Journey</h2>
+      <div>
+        <h3>Building the Foundation for Scientific Excellence</h3>
+        <p><strong>BSc (Hons) in Biotechnology</strong> — Sri Lanka Institute of Information Technology (SLIIT) | 2024 – Present</p>
+      </div>
+      <div>
+        <h3>Upper Education</h3>
+        <p>Sirimavo Bandaranaike Vidyalaya, Colombo 97 | 2020 – 2024</p>
+      </div>
+      <div>
+        <h3>Secondary Education</h3>
+        <p>Anula Vidyalaya, Nugegoda | 2009 – 2020</p>
+      </div>
     </section>
 
     <!-- EXPERIENCE -->
@@ -222,8 +241,31 @@
 
     <!-- SKILLS -->
     <section id="skills" class="card">
-      <h2 class="section-title">Other Skills</h2>
-      <p>Research & Data Analysis • Laboratory Techniques • Git & GitHub • Leadership & Teamwork • Sinhala & English</p>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>Biotechnology</li>
+            <li>Bioinformatics</li>
+            <li>Laboratory Techniques</li>
+            <li>Research Methodology</li>
+            <li>Data Analysis</li>
+            <li>Scientific Writing</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Critical Thinking</li>
+            <li>Problem Solving</li>
+            <li>Team Collaboration</li>
+            <li>Leadership</li>
+            <li>Communication</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- HOBBIES -->
